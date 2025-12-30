@@ -1,3 +1,4 @@
+import os.path
 import time
 from datetime import datetime, timedelta
 from sqlite3 import connect
@@ -79,6 +80,11 @@ def write_to_txt_log(text):
 
 
 def read_txt_log():
+    """Читает текстовый файл"""
+    if not os.path.exists('study_journal.txt'):
+        print('Журнал пуст. Проведите учебную сессию!')
+        return
+
     print('--- Учебный журнал ---')
     with open('study_journal.txt', 'r', encoding='utf-8') as f:
         lines = f.readlines()
