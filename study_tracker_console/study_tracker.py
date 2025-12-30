@@ -112,6 +112,7 @@ def start_timer():
 
             elif cmd == 's' or cmd == '':
                 total_seconds += time.time() - start_time
+                break
 
         else:
             cmd = input(
